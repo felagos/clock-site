@@ -1,9 +1,8 @@
 import { ImageResponse } from "../models/image.model";
 import ENV from "../environment";
+import { getRandom } from "../utils/random.util";
 
 const url = `${ENV.URL_IMAGES}/search/photos?query=forest&orientation=landscape`;
-
-const getRandom = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const getRandomImage = async () => {
 	const response = await fetch(url, {
@@ -13,7 +12,7 @@ export const getRandomImage = async () => {
 	});
 
 	const { results } = await response.json() as ImageResponse;
-	const random = getRandom(0, results.length - 1)
+	const random = getRandom(0, results.length - 1);
 
 	const image = results[random];
 
