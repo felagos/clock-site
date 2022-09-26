@@ -5,7 +5,7 @@ export const useImage = () => {
 	const [image, setImage] = useState("");
 
 	useEffect(() => {
-		getRandomImage().then(response => setImage(response));
+		getRandomImage().then(setImage);
 	}, []);
 
 	return { image };
