@@ -8,7 +8,7 @@ import "./styles.scss";
 
 export const App = () => {
 	const { data: image } = useFetch<string>(getRandomImage);
-	const { data: quote } = useFetch<Quote>(getQuotes);
+	const { data: quote, fetch: fetchQuotes } = useFetch<Quote>(getQuotes);
 	const { data: hour } = useTimeout(getHour, 1000);
 
 	return (

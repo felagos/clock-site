@@ -6,10 +6,12 @@ export const useFetch = <T>(fnCallback: Callback<T>) => {
 
 	const [data, setData] = useState<T>();
 
+	const fetch = () => fnCallback().then(setData);
+
 	useEffect(() => {
-		fnCallback().then(setData);
+		fetch();
 	}, []);
 
-	return { data };
+	return { data, fetch };
 
 };
