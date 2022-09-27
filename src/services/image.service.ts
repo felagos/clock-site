@@ -4,7 +4,7 @@ import { getRandom } from "../utils/random.util";
 
 const url = `${ENV.URL_IMAGES}/search/photos?query=forest&orientation=landscape`;
 
-export const getRandomImage = async () => {
+export const getRandomImage = async (): Promise<string> => {
 	const response = await fetch(url, {
 		headers: {
 			"Authorization": `Client-ID ${ENV.ACCESS_KEY}`

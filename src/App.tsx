@@ -1,11 +1,12 @@
-import { useImage } from "./hooks/useImage";
-import { useQuote } from "./hooks/useQuote";
+import { useFetch } from "./hooks/useFetch";
+import { Quote } from "./models";
+import { getRandomImage, getQuotes } from "./services";
 
 import "./styles.scss";
 
 export const App = () => {
-	const { image } = useImage();
-	const { quotes } = useQuote();
+	const { data: image } = useFetch<string>(getRandomImage);
+	const { data: quote } = useFetch<Quote>(getQuotes);
 
 	return (
 		<div className="container" style={{ backgroundImage: `url(${image})` }}>
