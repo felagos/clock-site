@@ -2,17 +2,20 @@ import { useMemo, useState } from "react";
 import { useFetch, useTimeout } from "../../hooks";
 import { getCurrentLocation } from "../../services";
 import { getHour, getPeriodDay } from "../../utils";
+import { DaysEnum } from "../../enums";
 
 import "./styles.scss";
 
 export const Clock = () => {
-	const [icon, setIcon] = useState(null);
-
 	const periodDay = useMemo(() => getPeriodDay(), []);
 
-	useMemo(async () => {
-		const icon = (await import(`../../assets/${periodDay}.svg`)).default;
-		setIcon(icon);
+
+	const icon = useMemo(() => {
+		if(periodDay === DaysEnum.DAY) return require('../../assets/day.svg');
+		if(periodDay === DaysEnum.NOON) return require('../../assets/noon.svg');
+		if(periodDay === DaysEnum.AFTERNOON) return require('../../assets/afternoon.svg');
+
+		return require('../../assets/night.svg')
 	}, [periodDay]);
 
 	const { data: hour } = useTimeout(getHour, 1000);

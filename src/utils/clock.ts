@@ -1,3 +1,5 @@
+import { DaysEnum } from "../enums";
+
 export const getHour = () => {
 	const time = new Date();
 
@@ -14,10 +16,10 @@ export const getPeriodDay = () => {
 	const time = new Date();
 	const hour = time.getHours();
 
-	if (hour < 12) return "morning";
-	if (hour === 12) return "noon";
-	if (hour <= 18) return "afternoon";
+	if (hour < 12) return DaysEnum.DAY;
+	if (hour === 12) return DaysEnum.NOON;
+	if (hour <= 18) return DaysEnum.AFTERNOON;
 
-	return "night";
+	return DaysEnum.NIGHT;
 
 };
