@@ -16,7 +16,7 @@ export const getPeriodDay = () => {
 
 	if (hour < 12) return "morning";
 	if (hour === 12) return "noon";
-	if (hour <= 18) return "afternnon";
+	if (hour <= 18) return "afternoon";
 
 	return "night";
 
