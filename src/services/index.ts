@@ -1,2 +1,3 @@
-export { getRandomImage } from './image.service';
-export { getQuotes } from './quote.service';
+export * from './image.service';
+export * from './quote.service';
+export * from './location.service';

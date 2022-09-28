@@ -2,9 +2,10 @@ import { ImageResponse } from "../models/image.model";
 import ENV from "../environment";
 import { getRandom } from "../utils/random.util";
 
-const url = `${ENV.URL_IMAGES}/search/photos?query=forest&orientation=landscape`;
 
-export const getRandomImage = async (): Promise<string> => {
+export const getRandomImage = async (query: string): Promise<string> => {
+	const url = `${ENV.URL_IMAGES}/search/photos?query=${query.toLowerCase()}&orientation=landscape`;
+
 	const response = await fetch(url, {
 		headers: {
 			"Authorization": `Client-ID ${ENV.ACCESS_KEY}`

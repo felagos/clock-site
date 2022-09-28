@@ -1,2 +1,2 @@
-export { getHour } from './clock';
-export { getRandom } from './random.util';
+export * from './clock';
+export * from './random.util';

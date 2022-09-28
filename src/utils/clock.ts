@@ -14,10 +14,10 @@ export const getPeriodDay = () => {
 	const time = new Date();
 	const hour = time.getHours();
 
-	if (hour < 12) return "Morning";
-	if (hour === 12) return "Noon";
-	if (hour <= 18) return "Afternnon";
+	if (hour < 12) return "morning";
+	if (hour === 12) return "noon";
+	if (hour <= 18) return "afternnon";
 
-	return "Night";
+	return "night";
 
 };
