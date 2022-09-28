@@ -2,7 +2,7 @@
 
 .clock {
 	color: $white;
-	font-size: 32px;
+	font-size: 28px;
 	text-shadow: 1px 1px $black;
 
 	&__period {
@@ -11,7 +11,7 @@
 	}
 
 	&__hour {
-		font-size: 120px;
+		font-size: 100px;
 		font-weight: bold;
 	}
 
