@@ -16,7 +16,7 @@ export const QuoteCard = () => {
 		<div className="quote">
 			<div className="quote__text">
 				<span className="quote__text--content">
-					{`"${quote.text}"`}
+					{`"${quote.quote}"`}
 				</span>
 				<img src={IconRefresh} alt="refresh quote" onClick={refreshQuote} className="quote__refresh" />
 			</div>
